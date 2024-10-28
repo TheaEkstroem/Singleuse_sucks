@@ -17,128 +17,6 @@ import Button from "../components/Link.astro";
     </p>
   </div>
 
-  <!-- form -->
-  <div class="bg-[#193452] text-white p-6 rounded-lg max-w-md mx-auto">
-    <!-- Donation Period -->
-    <div class="mb-6">
-      <h2 class="text-lg font-semibold mb-2">Donations periode</h2>
-      <div class="flex items-center space-x-6">
-        <!-- One-time payment option -->
-        <label class="flex items-center space-x-2 cursor-pointer">
-          <input
-            type="radio"
-            name="donation_period"
-            value="one-time"
-            class="sr-only peer"
-          />
-          <span
-            class="w-6 h-6 rounded-full border-2 flex items-center justify-center
-            peer-checked:bg-[#1F2A44] peer-checked:ring-2 peer-checked:ring-white bg-[#101828] border-[#1F2A44]"
-          >
-          </span>
-          <span class="text-gray-400 peer-checked:text-white"
-            >Engangs betaling</span
-          >
-        </label>
-
-        <!-- Monthly payment option -->
-        <label class="flex items-center space-x-2 cursor-pointer">
-          <input
-            type="radio"
-            name="donation_period"
-            value="monthly"
-            class="sr-only peer"
-            checked
-          />
-          <span
-            class="w-6 h-6 rounded-full border-2 flex items-center justify-center
-            peer-checked:bg-[#1F2A44] peer-checked:ring-2 peer-checked:ring-white bg-[#101828] border-[#1F2A44]"
-          >
-          </span>
-          <span class="text-gray-400 peer-checked:text-white">Månedligt</span>
-        </label>
-      </div>
-    </div>
-
-    <!-- Quick Donation Amounts -->
-    <div class="mb-6">
-      <h2 class="text-lg font-semibold mb-2">Hurtig donation</h2>
-      <div class="flex items-center space-x-4">
-        <!-- Donation amount: 50 -->
-        <label
-          class="flex items-center justify-center w-16 h-16 rounded-full cursor-pointer"
-        >
-          <input
-            type="radio"
-            name="quick_donation"
-            value="50"
-            class="sr-only peer"
-          />
-          <span
-            class="peer-checked:bg-[#1F2A44] peer-checked:border-white bg-[#101828] text-gray-400 peer-checked:text-white font-semibold border-2 w-full h-full rounded-full flex items-center justify-center"
-          >
-            50
-          </span>
-        </label>
-
-        <!-- Donation amount: 75 -->
-        <label
-          class="flex items-center justify-center w-16 h-16 rounded-full cursor-pointer"
-        >
-          <input
-            type="radio"
-            name="quick_donation"
-            value="75"
-            class="sr-only peer"
-            checked
-          />
-          <span
-            class="peer-checked:bg-[#1F2A44] peer-checked:border-white bg-[#101828] text-gray-400 peer-checked:text-white font-semibold border-2 w-full h-full rounded-full flex items-center justify-center"
-          >
-            75
-          </span>
-        </label>
-
-        <!-- Donation amount: 100 -->
-        <label
-          class="flex items-center justify-center w-16 h-16 rounded-full cursor-pointer"
-        >
-          <input
-            type="radio"
-            name="quick_donation"
-            value="100"
-            class="sr-only peer"
-          />
-          <span
-            class="peer-checked:bg-[#1F2A44] peer-checked:border-white bg-[#101828] text-gray-400 peer-checked:text-white font-semibold border-2 w-full h-full rounded-full flex items-center justify-center"
-          >
-            100
-          </span>
-        </label>
-      </div>
-    </div>
-
-    <!-- Custom Amount Input -->
-    <div class="mb-6">
-      <label class="block text-lg font-semibold mb-2" for="custom_amount"
-        >Selvvalgt Beløb</label
-      >
-      <input
-        type="text"
-        id="custom_amount"
-        placeholder="Andet beløb..."
-        class="w-full bg-[#101828] text-white placeholder-gray-400 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4C9FDC]"
-      />
-    </div>
-
-    <!-- Submit Button -->
-    <div class="transition">
-      <Button type="submit" variant="primary" size="medium"> Indsend</Button>
-    </div>
-  </div>
-
-
-
 
 
 
@@ -152,7 +30,7 @@ import Button from "../components/Link.astro";
           <div class="flex items-center gap-x-3">
             <input
               id="engangs"
-              name="måned"
+              name="periode"
               type="radio"
               class="h-5 w-5 bg-[#001D3D] border-none text-[#001D3D] focus:outline-none focus:ring-0 focus:ring-[#ffffff]"
             />
@@ -164,7 +42,7 @@ import Button from "../components/Link.astro";
           <div class="flex items-center gap-x-3">
             <input
               id="måned"
-              name="måned"
+              name="periode"
               type="radio"
               class="h-5 w-5 bg-[#001D3D] border-none text-[#001D3D] focus:outline-none focus:ring-0 focus:ring-[#ffffff]"
             />
@@ -174,58 +52,57 @@ import Button from "../components/Link.astro";
           </div>
         </div>
       </div>
-  
-      <!-- udvalgt Beløb -->
-      <div class="pb-5">
-        <p>Hurtig donation (i kr)</p>
-        <fieldset class="flex gap-4">
-       
-            <div class="flex items-center gap-x-3">
-              <input
-                id="50kr"
-                name="50kr"
-                type="radio"
-                class="h-12 w-12 bg-[#001D3D] border-none text-[#001D3D] focus:outline-none focus:ring-0 focus:ring-[#ffffff]"
-              />
-              <label
-                for="50kr"
-                class="block text-md font-medium leading-6 text-white">50</label
-              >
+
+        <!-- udvalgt beløb -->
+        <div class="pb-5 ">
+            <p>Hurtig donation (kr.)</p>
+            <div class="flex gap-9">
+              <div class="flex items-center gap-x-3">
+                <input
+                  id="donation50"
+                  name="beløb"
+                  type="radio"
+                  class="h-12 w-12 bg-[#001D3D] border-none text-[#001D3D] focus:outline-none focus:ring-0 focus:ring-[#ffffff]"
+                />
+                <label for="donation50" class="block text-md leading-6 text-white"
+                  >50</label
+                >
+              </div>
+      
+              <div class="flex items-center gap-x-3">
+                <input
+                  id="donation75"
+                  name="beløb"
+                  type="radio"
+                  class="h-12 w-12 bg-[#001D3D] border-none text-[#001D3D] focus:outline-none focus:ring-0 focus:ring-[#ffffff]"
+                />
+                <label for="donation75" class="block text-md leading-6 text-white"
+                  >75</label
+                >
+              </div>
+
+              <div class="flex items-center gap-x-3">
+                <input
+                  id="donation100"
+                  name="beløb"
+                  type="radio"
+                  class="h-12 w-12 bg-[#001D3D] border-none text-[#001D3D] focus:outline-none focus:ring-0 focus:ring-[#ffffff]"
+                />
+                <label for="donation100" class="block text-md leading-6 text-white"
+                  >100</label
+                >
+              </div>
+
             </div>
+          </div>
   
-            <div class="flex items-center gap-x-3">
-              <input
-                id="75kr"
-                name="75kr"
-                type="radio"
-                class="h-12 w-12 bg-[#001D3D] border-none text-[#001D3D] focus:outline-none focus:ring-0 focus:ring-[#ffffff]"
-              />
-              <label
-                for="75kr"
-                class="block text-md font-medium leading-6 text-white">75</label
-              >
-            </div>
-  
-            <div class="flex items-center gap-x-3">
-              <input
-                id="100kr"
-                name="100kr"
-                type="radio"
-                class="h-12 w-12 bg-[#001D3D] border-none text-[#001D3D] focus:outline-none focus:ring-0 focus:ring-[#ffffff] "
-              />
-              <label
-                for="100kr"
-                class="block text-md font-medium leading-6 text-white">100</label
-              >
-            </div>
-        </fieldset>
-      </div>
+    
   
       <!-- Selvvalgt Beløb -->
       <div class="pb-5">
-          <p>Selvvalgt beløb i kr.</p>
+          <p>Selvvalgt beløb (kr.)</p>
           <div class="mt-2">
-            <input type="text" name="first-name" placeholder="Selvvalgt beløb" id="first-name" autocomplete="given-name"         class="w-full bg-[#101828] text-white placeholder-gray-400 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4C9FDC]">
+            <input type="text" name="selvvalgt-beløb" placeholder="Selvvalgt beløb" id="first-name" autocomplete="given-name"         class="w-full bg-[#001D3D] text-white placeholder-gray-400 px-4 py-3 rounded-lg focus:outline-none focus:ring-0 focus:ring-white">
           </div>
   
       <!--  støt knap  -->
