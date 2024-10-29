@@ -60,3 +60,14 @@ import TopTi from "../components/TopTi.astro";
     </section>
   </article>
 </MainLayout>
+
+<script>
+      import { scroll, animate, inView } from "@motionone/dom";
+
+  scroll(
+	animate("#horisontalliste", {
+		transform: ["none", "translateX(-500vw)"]
+	}),
+	{ target: document.querySelector("#horisontalscrollsection") }
+	); 
+</script>
