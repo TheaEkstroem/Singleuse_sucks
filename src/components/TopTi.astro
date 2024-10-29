@@ -91,7 +91,7 @@
         <p class="text-3xl">624,878</p>
       </div>
 
-      <div class="objekt flex flex-col items-center mt-10">
+      <div class="flex flex-col items-center mt-10">
         <img
           class="h-auto max-w-16 pb-6"
           src="../public/TakeAway.svg"
@@ -106,19 +106,14 @@
   <script>
     import { inView, animate, stagger } from "@motionone/dom";
 
-    inView("#stagger2 img,h3,p", () => {
+    inView("#stagger2 .flex", () => {
       animate(
-        ".staggeranimation2 img,h3,p",
+        ".staggeranimation2 .flex",
         { opacity: [0, 1] },
         {
-          delay: stagger(0.3, { start: 0.3 }),
+          delay: stagger(0.3, { start: 0.1 }),
         }
       );
     });
   </script>
-
-  <style>
-    .objekt {
-    }
-  </style>
 </section>
