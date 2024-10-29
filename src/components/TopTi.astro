@@ -6,10 +6,13 @@
   <div class="bg-[#000D36]/50 p-20 rounded-lg">
     <div>
       <h2>Top 10</h2>
-      <h3>indsamlede genstande i havet</h3>
+      <h2>indsamlede genstande i havet</h2>
     </div>
 
-    <div class="grid grid-cols-5 grid-rows-2 gap-8 mt-10 place-items-center">
+    <div
+      id="stagger2"
+      class="grid grid-cols-5 grid-rows-2 gap-8 mt-10 place-items-center staggeranimation2"
+    >
       <div class="flex flex-col items-center">
         <img
           class="h-auto max-w-12 pb-6"
@@ -88,7 +91,7 @@
         <p class="text-3xl">624,878</p>
       </div>
 
-      <div class="flex flex-col items-center mt-10">
+      <div class="objekt flex flex-col items-center mt-10">
         <img
           class="h-auto max-w-16 pb-6"
           src="../public/TakeAway.svg"
@@ -100,5 +103,22 @@
     </div>
   </div>
 
-  <script></script>
+  <script>
+    import { inView, animate, stagger } from "@motionone/dom";
+
+    inView("#stagger2 img,h3,p", () => {
+      animate(
+        ".staggeranimation2 img,h3,p",
+        { opacity: [0, 1] },
+        {
+          delay: stagger(0.3, { start: 0.3 }),
+        }
+      );
+    });
+  </script>
+
+  <style>
+    .objekt {
+    }
+  </style>
 </section>
